@@ -63,6 +63,6 @@ order by salario desc ;
 
     select nome
     from funcionarios
-    where nome = 'lucas%'
-    order by salario desc;
+    where nome
+    like '%l';
 
