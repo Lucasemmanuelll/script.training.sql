@@ -63,6 +63,6 @@ order by salario desc ;
 
     select nome
     from funcionarios
-    where nome
-    like '%l';
+    where (cargo like 'p%' or cargo like'e%') and salario > 5000
+    order by salario desc;
 
