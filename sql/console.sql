@@ -66,3 +66,8 @@ order by salario desc ;
     where (cargo like 'p%' or cargo like'e%') and salario > 5000
     order by salario desc;
 
+select nome,cargo,salario
+from funcionarios
+where cargo in ('Programador','Engenheiro')
+and salario > 3000
+order by salario desc
