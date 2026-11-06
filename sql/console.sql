@@ -3,6 +3,18 @@ create table cliente(
     nome varchar(100) not null,
     cpf varchar(11) not null
 );
+create table conta(
+    id_conta serial primary key,
+    numero_conta varchar(20) not null unique,
+    saldo numeric(10,2) not null,
+    id_cliente int not null,
+
+    constraint fk_cliente
+                  foreign key (id_cliente)
+                  references cliente (id_cliente)
+
+);
+
 create table funcionarios(
     id_funcionario serial primary key,
     nome varchar(50) not null,
