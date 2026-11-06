@@ -1,3 +1,8 @@
+create table cliente(
+    id_cliente serial primary key,
+    nome varchar(100) not null,
+    cpf varchar(11) not null
+);
 create table funcionarios(
     id_funcionario serial primary key,
     nome varchar(50) not null,
