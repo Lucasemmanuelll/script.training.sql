@@ -29,20 +29,10 @@ create table cliente(
     renda numeric(10,2) not null
 );
 
-insert into funcionarios(nome,cargo,salario)
-values ('lucas','programador',4000);
-
-insert into funcionarios(nome, cargo, salario)
-values ('amanda', 'dentista', 4000);
-
-insert into funcionarios(nome, cargo, salario)
-values ('jonatas','engenheiro',4000);
-
-insert into funcionarios(nome,cargo,salario)
-values ('Lucas','Inpetor',11.000);
-
-insert into public.funcionarios(nome, cargo, salario)
-values ('João','Médico',12.000);
+insert into cliente(nome, cpf)
+values ('Lucas',49374388839);
+insert into conta(numero_conta, saldo, id_cliente)
+values(1001,30000,1);
 
 select *
 from   funcionarios
