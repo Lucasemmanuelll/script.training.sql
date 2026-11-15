@@ -57,9 +57,8 @@ update funcionarios
 set cargo = 'Desenvolvedor Java'
 where nome =  'Lucas';
 
-update funcionarios
-set salario = 4500
-where nome = 'amanda';
+ALTER TABLE cliente
+    RENAME COLUMN razao_social TO nome;
 
 select *
 from funcionarios
