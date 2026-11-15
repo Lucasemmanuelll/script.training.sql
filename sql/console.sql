@@ -53,9 +53,8 @@ where   salario >= 5.000;
 
 
 
-update funcionarios
-set cargo = 'Desenvolvedor Java'
-where nome =  'Lucas';
+ALTER TABLE cliente
+    ADD COLUMN cpf VARCHAR(11);
 
 ALTER TABLE cliente
     RENAME COLUMN razao_social TO nome;
