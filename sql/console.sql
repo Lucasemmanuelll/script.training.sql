@@ -59,9 +59,8 @@ ALTER TABLE cliente
 ALTER TABLE cliente
     RENAME COLUMN razao_social TO nome;
 
-select *
-from funcionarios
-order by salario desc ;
+ALTER TABLE cliente
+    ALTER COLUMN cpf SET NOT NULL;
 
 
 
