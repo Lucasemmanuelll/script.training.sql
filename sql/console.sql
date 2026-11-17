@@ -56,9 +56,13 @@ update cliente
 set renda = 3500
 where CPF = 44444444444;
 
-select *
-from funcionarios
-where   salario >= 5.000;
+select cliente.nome,
+       cliente.cpf,
+       conta.numero_conta,
+       conta.saldo
+from cliente
+inner join conta
+on cliente.id_cliente = conta.id_cliente;
 
 
 
