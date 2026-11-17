@@ -67,14 +67,8 @@ on cliente.id_cliente = conta.id_cliente;
 select cliente.nome, conta.numero_conta
 from cliente
 left join conta
- on cliente.id_cliente = conta.id_cliente;
-
-
-
-    select nome
-    from funcionarios
-    where (cargo like 'p%' or cargo like'e%') and salario > 5000
-    order by salario desc;
+ on cliente.id_cliente = conta.id_cliente
+where conta.id_cliente is null;
 
 select nome,cargo,salario
 from funcionarios
