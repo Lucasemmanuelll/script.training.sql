@@ -64,18 +64,10 @@ from cliente
 inner join conta
 on cliente.id_cliente = conta.id_cliente;
 
-
-
-
-ALTER TABLE cliente
-    ADD COLUMN cpf VARCHAR(11);
-
-ALTER TABLE cliente
-    RENAME COLUMN razao_social TO nome;
-
-ALTER TABLE cliente
-    ALTER COLUMN cpf SET NOT NULL;
-
+select cliente.nome, conta.numero_conta
+from cliente
+left join conta
+ on cliente.id_cliente = conta.id_cliente;
 
 
 
