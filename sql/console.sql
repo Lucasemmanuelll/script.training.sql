@@ -29,10 +29,20 @@ create table cliente(
     renda numeric(10,2) not null
 );
 
-insert into cliente(nome, cpf)
-values ('Lucas',49374388839);
-insert into conta(numero_conta, saldo, id_cliente)
-values(1001,30000,1);
+INSERT INTO cliente (id_cliente,nome, cpf)
+VALUES ('Lucas', '49374388839');
+
+INSERT INTO conta (numero_conta, saldo, id_cliente)
+VALUES ('1001', 30000.00, 1);
+
+SELECT * FROM cliente;
+SELECT * FROM conta;
+
+select cliente.id_cliente
+from cliente
+inner join conta
+on cliente.id_cliente = conta.id_cliente
+;
 
 select *
 from   funcionarios
