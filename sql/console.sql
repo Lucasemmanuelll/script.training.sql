@@ -96,3 +96,8 @@ from conta;
 
 select avg(saldo) as saldo_médio
 from conta;
+
+select *
+from conta
+where saldo > (select avg(saldo)
+               from conta);
