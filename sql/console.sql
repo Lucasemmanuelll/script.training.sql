@@ -70,11 +70,13 @@ left join conta
  on cliente.id_cliente = conta.id_cliente
 where conta.id_cliente is null;
 
-select nome,cargo,salario
-from funcionarios
-where salario between 3000 and 7000
-and salario > 3000
-order by salario desc;
+select
+    cliente.nome,
+    cliente.cpf,
+    cliente.id_cliente
+from cliente
+right join conta
+on cliente.id_cliente = conta.id_cliente;
 
 select
     id_cliente,
