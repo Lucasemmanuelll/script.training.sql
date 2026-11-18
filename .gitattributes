@@ -1,0 +1,2 @@
+# Incluir arquivos SQL nas estatísticas de linguagens do GitHub
+*.sql linguist-detectable=true
