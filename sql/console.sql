@@ -89,3 +89,6 @@ from cliente;
 
 select sum(saldo) as saldo_total
 from conta;
+
+select avg(saldo) as saldo_médio
+from conta;
