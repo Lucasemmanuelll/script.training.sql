@@ -86,3 +86,6 @@ group by id_cliente;
 
 select count(*) as total_clientes
 from cliente;
+
+select sum(saldo) as saldo_total
+from conta;
