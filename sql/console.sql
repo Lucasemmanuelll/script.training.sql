@@ -79,10 +79,13 @@ right join conta
 on cliente.id_cliente = conta.id_cliente;
 
 select
-    id_cliente,
-    count(*) as quantidade_contas
-from conta
-group by id_cliente;
+    cliente.id_cliente,
+    cliente.nome,
+    count(conta.id_conta) as quantidade_contas
+from cliente
+left join conta
+on cliente.id_cliente = conta.id_cliente
+group by cliente.id_cliente, cliente.nome;
 
 select count(*) as total_clientes
 from cliente;
