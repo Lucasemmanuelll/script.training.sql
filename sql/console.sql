@@ -83,3 +83,6 @@ select
     count(*) as quantidade_contas
 from conta
 group by id_cliente;
+
+select count(*) as total_clientes
+from cliente;
