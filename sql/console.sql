@@ -81,6 +81,7 @@ on cliente.id_cliente = conta.id_cliente;
 select
     cliente.id_cliente,
     cliente.nome,
+    coalesce(sum(saldo),0) as saldo_total,
     count(conta.id_conta) as quantidade_contas
 from cliente
 left join conta
