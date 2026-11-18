@@ -113,4 +113,12 @@ select nome
     where id_cliente not in (
         select id_cliente
         from conta
-    )
+    );
+
+select nome
+from  cliente
+where exists(
+    select 1
+    from conta
+    where conta.id_cliente = cliente.id_cliente
+);
