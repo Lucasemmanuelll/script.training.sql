@@ -108,3 +108,9 @@ where id_cliente in (
     select id_cliente
     from conta
     );
+select nome
+    from cliente
+    where id_cliente not in (
+        select id_cliente
+        from conta
+    )
