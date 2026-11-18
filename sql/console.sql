@@ -76,7 +76,8 @@ where salario between 3000 and 7000
 and salario > 3000
 order by salario desc;
 
-select nome,cargo,salario
-from funcionarios
-where cargo is null
-order by salario desc;
+select
+    id_cliente,
+    count(*) as quantidade_contas
+from conta
+group by id_cliente;
