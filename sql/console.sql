@@ -101,3 +101,10 @@ select *
 from conta
 where saldo > (select avg(saldo)
                from conta);
+
+select nome
+from cliente
+where id_cliente in (
+    select id_cliente
+    from conta
+    );
