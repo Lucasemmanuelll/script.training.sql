@@ -122,3 +122,17 @@ where exists(
     from conta
     where conta.id_cliente = cliente.id_cliente
 );
+with resumo_clientes as(
+
+    select
+        cliente.id_cliente,
+        cliente.nome,
+        count(conta.id_conta) as quantidade_contas,
+        coalesce(sum(conta.saldo),0) as saldo_total
+        from cliente
+        left join conta
+         on cliente.id_cliente = conta.id_cliente
+        group by cliente.id_cliente, cliente.nome
+)
+select *
+from resumo_clientes;
