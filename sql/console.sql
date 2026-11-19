@@ -122,6 +122,7 @@ where exists(
     from conta
     where conta.id_cliente = cliente.id_cliente
 );
+
 with resumo_clientes as(
 
     select
@@ -136,3 +137,16 @@ with resumo_clientes as(
 )
 select *
 from resumo_clientes;
+with saldo_media as (
+    select
+    coalesce(avg(saldo),0) as media_saldos
+    from conta
+)
+select
+    numero_conta,
+    saldo
+    from conta
+    where saldo > (
+    select media_saldos
+    from saldo_media
+)
