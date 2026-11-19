@@ -150,6 +150,21 @@ select
     where saldo > (
     select media_saldos
     from saldo_media
-)
+);
 create index idx_id_conta
     on conta (id_cliente);
+begin;
+
+update conta
+set saldo = saldo - 1000
+where id_conta = 1;
+
+update conta
+set saldo = saldo + 1000
+where id_conta = 2;
+
+commit;
+
+select id_conta,saldo
+from conta
+where id_conta in (1,2);
