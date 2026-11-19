@@ -153,6 +153,18 @@ select
 );
 create index idx_id_conta
     on conta (id_cliente);
+
+    EXPLAIN ANALYZE
+    SELECT *
+    FROM conta
+    WHERE id_cliente = 1;
+
+    SELECT
+        indexname,
+        indexdef
+    FROM pg_indexes
+    WHERE tablename = 'conta';
+
 begin;
 
 update conta
@@ -162,6 +174,7 @@ where id_conta = 1;
 update conta
 set saldo = saldo + 1000
 where id_conta = 2;
+    returning id_conta,saldo;
 
 commit;
 
