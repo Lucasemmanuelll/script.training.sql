@@ -137,6 +137,7 @@ with resumo_clientes as(
 )
 select *
 from resumo_clientes;
+
 with saldo_media as (
     select
     coalesce(avg(saldo),0) as media_saldos
@@ -150,3 +151,5 @@ select
     select media_saldos
     from saldo_media
 )
+create index idx_id_conta
+    on conta (id_cliente);
