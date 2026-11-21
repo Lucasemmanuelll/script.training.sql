@@ -173,8 +173,8 @@ where id_conta = 1;
 
 update conta
 set saldo = saldo + 1000
-where id_conta = 2;
-    returning id_conta,saldo;
+where id_conta = 2
+returning id_conta,saldo;
 
 commit;
 
